@@ -30,7 +30,7 @@ export class GifsService {
 
     // Lo inserto al principio de la lista
     this._tagsHistory.unshift(tag);
-    this._tagsHistory = this.tagsHistory.splice(0,10);
+    this._tagsHistory = this.tagsHistory.splice(0,10); // Máximo de 10 tags en el []
 
     // Actualizo el LocalStorage
     this.saveLocalStorage();
@@ -51,7 +51,7 @@ export class GifsService {
 
 
   searchTag(tag:string):void {
-    if(tag.length === 0) return;
+    if(tag.length === 0) return; // Cadena vacía
     this.organizeHistory(tag);
 
     const params = new HttpParams()
